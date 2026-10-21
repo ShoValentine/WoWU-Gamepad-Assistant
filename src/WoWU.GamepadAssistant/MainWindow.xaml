@@ -1,0 +1,20 @@
+<Window x:Class="WoWU.GamepadAssistant.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="WoWU Gamepad Assistant â€” Prototype" Width="700" Height="740" MinWidth="640" MinHeight="650" Background="#111920" Foreground="#F1E8D3" Closing="OnClosing">
+ <ScrollViewer VerticalScrollBarVisibility="Auto"><StackPanel Margin="28">
+  <TextBlock Text="WoWU Gamepad Assistant" FontSize="26" Foreground="#E5BC67"/>
+  <TextBlock Text="Milestone 2 Â· Existing-display prototype" Margin="0,6,0,22" Foreground="#B5BEC4"/>
+  <TextBlock x:Name="Status" Text="Please launch World of Warcraft." FontSize="18" TextWrapping="Wrap" Margin="0,0,0,18"/>
+  <TextBlock Text="World of Warcraft window"/><ComboBox x:Name="Games" DisplayMemberPath="Label"/>
+  <TextBlock Text="Gameplay monitor"/><ComboBox x:Name="MainDisplay" DisplayMemberPath="Label"/>
+  <TextBlock Text="Existing WoWU virtual monitor (1280 Ã— 800)"/><ComboBox x:Name="TouchDisplay" DisplayMemberPath="Label"/>
+  <TextBlock Text="Select your existing virtual monitor explicitly. This prototype does not create or rearrange displays. It must already be directly beneath the gameplay monitor." TextWrapping="Wrap" Foreground="#B5BEC4" Margin="0,0,0,16"/>
+  <CheckBox x:Name="InWorld" Foreground="#F1E8D3" Margin="0,0,0,18" Content="I am logged into the world in Forever, in Windowed mode."/>
+  <WrapPanel Margin="0,0,0,16">
+   <Button x:Name="ActivateButton" Content="Preview span" Click="OnActivate"/>
+   <Button x:Name="Keep" Content="Keep span" Click="OnKeep" IsEnabled="False"/>
+   <Button x:Name="Restore" Content="Restore window" Click="OnRestore"/>
+   <Button x:Name="Refresh" Content="Refresh" Click="OnRefresh"/>
+  </WrapPanel>
+  <TextBlock x:Name="Instructions" TextWrapping="Wrap" Foreground="#E5BC67" Margin="0,0,0,14"/>
+  <TextBlock Text="No Sunshine or driver changes. Nothing activates automatically. Close restores the game window. Stop the in-game viewport before restoring the window." TextWrapping="Wrap" Foreground="#B5BEC4"/>
+ </StackPanel></ScrollViewer>
+</Window>
