@@ -1,0 +1,13 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+artifacts/
+logs/
+recovery/
+local-settings.json
+.env
+.env.*
+*.pfx
+*.key
