@@ -87,7 +87,7 @@ These are unedited development captures. Feature availability varies by client; 
 1. **Start the Assistant.** It prepares the owned virtual display and managed streaming host.
 2. **Launch WoW normally.** Enter the world with the matching WoWU addon enabled.
 3. **Enable Gamepad Mode.** WoWU and the Assistant coordinate the viewport and companion interface.
-4. **Connect with Moonlight.** Choose **WoWU Gamepad** and use **1280 × 800**. First-time pairing opens a PIN window in the Assistant.
+4. <a href="https://moonlight-stream.org/"**Connect with Moonlight.**></a> Choose **WoWU Gamepad** and use **1280 × 800**. First-time pairing opens a PIN window in the Assistant.
 
 The companion stream is configured without audio, leaving your normal game sound on the PC. Initial driver setup may ask for Windows administrator approval or a restart.
 
