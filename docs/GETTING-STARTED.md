@@ -9,6 +9,10 @@ This guide describes the current development packages. The repository's original
 - The .NET 10 Desktop Runtime x64 for the framework-dependent Assistant.
 - A Moonlight-capable device and a suitable local network. Touchscreen behavior depends on the device and Moonlight client.
 
+## Downloads
+
+The [CurseForge download link](../README.md#downloads) is currently a clearly marked placeholder. WoWU is not published on CurseForge yet; use the development packages supplied by the maintainer until the listing is available.
+
 ## Install the development build
 
 1. Close the previous Assistant. Extract the **entire** new Assistant package into its own folder.

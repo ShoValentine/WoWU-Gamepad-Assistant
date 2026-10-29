@@ -16,9 +16,10 @@
 
 <p align="center">
   <a href="#what-is-wowu">Overview</a> &nbsp;·&nbsp;
+  <a href="#downloads">Downloads</a> &nbsp;·&nbsp;
   <a href="docs/GETTING-STARTED.md">Getting started</a> &nbsp;·&nbsp;
   <a href="docs/FEATURES.md">Features & compatibility</a> &nbsp;·&nbsp;
-  <a href="docs/SCREENSHOTS.md">Screenshot guide</a>
+  <a href="docs/SCREENSHOTS.md">Screenshots</a>
 </p>
 
 ---
@@ -30,8 +31,11 @@ WoWU brings your bags, quests, maps, spells and other everyday Warcraft controls
 The **WoWU addon** provides the interface inside the game. The **Gamepad Assistant** prepares the Windows display and manages Sunshine streaming. **Moonlight** puts that companion display on your device.
 
 <p align="center">
-  <img src="docs/assets/how-it-works.svg" alt="WoW gameplay on the main screen, a separate WoWU companion interface streamed through Sunshine to a Moonlight device" width="960">
+  <a href="docs/screenshots/setup.jpg"><img src="docs/screenshots/setup.jpg" alt="World of Warcraft on the main monitor, with WoWU's dashboard on a handheld touchscreen held beneath it" width="960"></a>
+  <br><em>Main-screen gameplay. Your companion interface in your hands.</em>
 </p>
+
+[See the screenshot gallery →](docs/SCREENSHOTS.md)
 
 ## Made for your next adventure
 
@@ -45,6 +49,38 @@ The **WoWU addon** provides the interface inside the game. The **Gamepad Assista
 | **Return to normal play** | Disabling Gamepad Mode restores the gameplay layout and minimap. WoWU starts hidden when the mode is off. |
 
 Feature availability follows the running WoW client. Forever retains its native controller system; some Classic screens use hosted Blizzard windows. [Read the complete support matrix →](docs/FEATURES.md)
+
+## A look inside
+
+<table>
+  <tr>
+    <td width="50%" align="center"><a href="docs/screenshots/dashboard.png"><img src="docs/screenshots/dashboard.png" alt="WoWU dashboard with tracked quests, minimap and Quick Access" width="460"></a><br><strong>Your dashboard</strong><br>Quests, maps and shortcuts in one touch-friendly layout.</td>
+    <td width="50%" align="center"><a href="docs/screenshots/spellbook.png"><img src="docs/screenshots/spellbook.png" alt="WoWU's two-page parchment spellbook" width="460"></a><br><strong>A familiar spellbook</strong><br>Browse abilities and swipe through the pages.</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="docs/screenshots/bags.png"><img src="docs/screenshots/bags.png" alt="WoWU inventory grid with an item-inspector panel" width="460"></a><br><strong>Bags within reach</strong><br>A clear inventory grid and a dedicated item inspector.</td>
+    <td width="50%" align="center"><a href="docs/screenshots/assistant.png"><img src="docs/screenshots/assistant.png" alt="WoWU Gamepad Assistant showing Gamepad Mode connected" width="420"></a><br><strong>A quiet Assistant</strong><br>Just the logo and the connection status.</td>
+  </tr>
+</table>
+
+### Choose your controller layout
+
+<table>
+  <tr>
+    <td width="50%" align="center"><a href="docs/screenshots/controller-compact.png"><img src="docs/screenshots/controller-compact.png" alt="Compact controller HUD with eight buttons and LB/RB" width="340"></a><br><strong>Compact</strong><br>One eight-button pair changes with your triggers.</td>
+    <td width="50%" align="center"><a href="docs/screenshots/controller-expanded.png"><img src="docs/screenshots/controller-expanded.png" alt="Expanded controller HUD with no-trigger, LT, RT and LT+RT clusters" width="460"></a><br><strong>Expanded</strong><br>Keep the separate trigger-layer clusters visible.</td>
+  </tr>
+</table>
+
+These are unedited development captures. Feature availability varies by client; Forever retains its own native controller system. Click any image to view the original.
+
+## Downloads
+
+<p align="center">
+  <a href="#downloads"><img src="https://img.shields.io/badge/CurseForge-coming_soon-F16436?style=for-the-badge&amp;logo=curseforge&amp;logoColor=white" alt="Download on CurseForge — coming soon, not yet published"></a>
+</p>
+
+**CurseForge listing coming soon.** WoWU has not been published there yet. This download button is a placeholder and will link directly to the project listing once it is available. Development builds are currently supplied by the maintainer.
 
 ## The everyday flow
 

@@ -1,25 +1,53 @@
-# Screenshot plan
+# WoWU in action
 
-The README uses the supplied WoWU artwork and an explanatory diagram. The gallery will use actual gameplay screenshots; no mock interface is presented as a game capture.
+Actual development captures supplied by the project owner. Images are published unchanged; click them to open the original. These screens illustrate the supplied development session, not identical support across every Warcraft client. See the [feature matrix](FEATURES.md) for client-specific coverage.
 
-## Main gallery shots
+[Back to the project overview](../README.md)
 
-1. **The whole setup — hero image.** Main monitor showing normal gameplay/controller HUD, with the handheld/tablet below showing WoWU's dashboard. A clear landscape photograph is ideal. Keep pairing PINs and private chat out of shot.
-2. **Dashboard — direct 1280 × 800 capture.** Your polished layout with minimap, tracked quests, Quick Access and the controls widget. Close Edit Mode and debug messages.
-3. **Bags / equipment comparison.** A gear item selected with the readable tooltip and stat comparison visible. Keep inventory unobstructed by external windows.
-4. **Spellbook.** Show the parchment spread and one selected spell inspector so the touch layout is clear.
-5. **Controller compact layout.** Gameplay capture showing the single eight-button pair plus LB/RB. Ideally provide a second capture with a trigger held and the changed layer visible. A short clip is useful later.
-6. **Assistant — connected.** Tight capture of the current minimal logo/status window showing the connected state. The splash is an optional extra; omit pairing PINs.
+## The whole setup
 
-## Optional follow-up shots
+Main-screen gameplay with WoWU running on a handheld touchscreen.
 
-- Mists talent tiers and Retail talent tree, labelled by client.
-- Quest journal or map with a selected quest and its guidance.
-- Retail bank split view, merchant catalogue or custom Auction House.
-- Fishing Companion or Dungeon Journal/PvP pages.
+<p align="center"><a href="screenshots/setup.jpg"><img src="screenshots/setup.jpg" alt="Main-screen gameplay with WoWU running on a handheld touchscreen." width="960"></a></p>
 
-## Capture notes
+## Dashboard
 
-Use original PNG captures where possible, with the cursor off important text and no OBS transform outlines. Direct companion captures should retain 1280 × 800. Avoid upscaling. Label which WoW client each image comes from so the gallery does not suggest identical features on every version.
+A dashboard layout with tracked quests, minimap, map controls, Quick Access and experience bar.
 
-Images will be added under `docs/screenshots/` with descriptive filenames and alt text. Only captures explicitly supplied for this project will be published.
+<p align="center"><a href="screenshots/dashboard.png"><img src="screenshots/dashboard.png" alt="A dashboard layout with tracked quests, minimap, map controls, Quick Access and experience bar." width="960"></a></p>
+
+## Bags
+
+The inventory grid with a separate item-inspector panel and touch-sized action buttons.
+
+<p align="center"><a href="screenshots/bags.png"><img src="screenshots/bags.png" alt="The inventory grid with a separate item-inspector panel and touch-sized action buttons." width="960"></a></p>
+
+## Spellbook
+
+The parchment spellbook with Mage abilities, active/passive spells and page controls.
+
+<p align="center"><a href="screenshots/spellbook.png"><img src="screenshots/spellbook.png" alt="The parchment spellbook with Mage abilities, active/passive spells and page controls." width="960"></a></p>
+
+## Compact controller layout
+
+Compact controller layout: one D-pad and face-button pair, plus LB and RB.
+
+<p align="center"><a href="screenshots/controller-compact.png"><img src="screenshots/controller-compact.png" alt="Compact controller layout: one D-pad and face-button pair, plus LB and RB." width="352"></a></p>
+
+## Expanded controller layout
+
+Expanded controller layout showing the no-trigger, LT, RT and LT+RT clusters.
+
+<p align="center"><a href="screenshots/controller-expanded.png"><img src="screenshots/controller-expanded.png" alt="Expanded controller layout showing the no-trigger, LT, RT and LT+RT clusters." width="877"></a></p>
+
+## Windows Assistant
+
+The minimal Windows Assistant showing Gamepad Mode connected.
+
+<p align="center"><a href="screenshots/assistant.png"><img src="screenshots/assistant.png" alt="The minimal Windows Assistant showing Gamepad Mode connected." width="476"></a></p>
+
+## How it fits together
+
+The Windows Assistant prepares the display and streaming host. WoWU provides the companion interface inside the game, and Moonlight displays it on the handheld or tablet.
+
+![Illustrated overview of the main screen, Assistant and companion device](assets/how-it-works.svg)

@@ -1,0 +1,68 @@
+{
+  "note": "Original user-supplied development captures, unedited. Client labels were not explicitly supplied; captions do not claim cross-client feature parity.",
+  "captures": [
+    {
+      "file": "setup.jpg",
+      "bytes": 424816,
+      "width": 1998,
+      "height": 1638,
+      "sha256": "86d1061efe7471721209db110c1f69e2ae41b3c8b2887def5c9b2473dfcdeef8",
+      "git_blob_sha": "b44e20340c502250be802512d7e20220988ac4aa",
+      "caption": "Main-screen gameplay with WoWU running on a handheld touchscreen."
+    },
+    {
+      "file": "dashboard.png",
+      "bytes": 713031,
+      "width": 1279,
+      "height": 799,
+      "sha256": "f13939503dd568e963ab64865a2b8fc497f90ed9d62afda4439a00e6b27ff70a",
+      "git_blob_sha": "1b4e4f0bdda569ad40788fe9419ccd4d4b53f2f1",
+      "caption": "A dashboard layout with tracked quests, minimap, map controls, Quick Access and experience bar."
+    },
+    {
+      "file": "bags.png",
+      "bytes": 728573,
+      "width": 1279,
+      "height": 798,
+      "sha256": "2a5d01ab8a002deeb9d663ffa0b5e6ec782410bb24aa51bad3cb1b840e8f97fd",
+      "git_blob_sha": "03020252b495698ab012e98146823c511e4c3f2c",
+      "caption": "The inventory grid with a separate item-inspector panel and touch-sized action buttons."
+    },
+    {
+      "file": "spellbook.png",
+      "bytes": 1330403,
+      "width": 1279,
+      "height": 798,
+      "sha256": "2843a2a7fcfb38da1d6b7086d79844d7d1510ae66348a48718afba45357c11d4",
+      "git_blob_sha": "7c496296007e92204e43be3664a88be619ad343e",
+      "caption": "The parchment spellbook with Mage abilities, active/passive spells and page controls."
+    },
+    {
+      "file": "controller-compact.png",
+      "bytes": 113844,
+      "width": 352,
+      "height": 212,
+      "sha256": "e57ba601ad8ca609e26ebdeb3097b6a557f4c36b307a803b4cb4a2eb1bdda117",
+      "git_blob_sha": "57375edf98fe16d177bd7e8d4f528cfc9c0d1a59",
+      "caption": "Compact controller layout: one D-pad and face-button pair, plus LB and RB."
+    },
+    {
+      "file": "controller-expanded.png",
+      "bytes": 558240,
+      "width": 877,
+      "height": 416,
+      "sha256": "d4107f43740718e5b2edacbb086bb69bbf20ea89c0d98b02ad1c77fc5995f9ca",
+      "git_blob_sha": "b59e5347279751b84f63616c9fd766ebd9775407",
+      "caption": "Expanded controller layout showing the no-trigger, LT, RT and LT+RT clusters."
+    },
+    {
+      "file": "assistant.png",
+      "bytes": 71935,
+      "width": 476,
+      "height": 260,
+      "sha256": "1bc54390a6ae4614b3904e0a05666304204bbfce8359458a6ab34a6a88a815ae",
+      "git_blob_sha": "6623e392573d453302f82400d47b83624c46f909",
+      "caption": "The minimal Windows Assistant showing Gamepad Mode connected."
+    }
+  ]
+}
