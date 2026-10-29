@@ -87,7 +87,7 @@ These are unedited development captures. Feature availability varies by client; 
 1. **Start the Assistant.** It prepares the owned virtual display and managed streaming host.
 2. **Launch WoW normally.** Enter the world with the matching WoWU addon enabled.
 3. **Enable Gamepad Mode.** WoWU and the Assistant coordinate the viewport and companion interface.
-4. <a href="https://moonlight-stream.org/"**Connect with Moonlight.**></a> Choose **WoWU Gamepad** and use **1280 × 800**. First-time pairing opens a PIN window in the Assistant.
+4. <a href="https://moonlight-stream.org/">**Connect with Moonlight.**</a> Choose **WoWU Gamepad** and use **1280 × 800**, and **Optimize mouse for remote desktop instead of games** First-time pairing opens a PIN window in the Assistant.
 
 The companion stream is configured without audio, leaving your normal game sound on the PC. Initial driver setup may ask for Windows administrator approval or a restart.
 
@@ -107,11 +107,7 @@ The [80-feature matrix](docs/FEATURES.md) distinguishes custom interfaces, nativ
 
 ## Development status
 
-WoWU is a **private development preview**. Current reviewed development packages are **addon v0.13.2**, **Compass v0.4.4** and **Assistant v0.7.3**. Builds are supplied by the maintainer during testing.
-
-The source currently checked into this repository is the **earlier v0.1.0 Assistant milestone**. This project overview describes the newer development builds; it does not imply that building the older snapshot produces the current app. Updating the source snapshot is a separate task from this presentation refresh.
-
-The latest project review passed **146 current behavior/compatibility checks**, compiled **109 Lua files**, and rebuilt the Assistant without warnings. Those automated checks do not certify protected combat actions, every client UI or an actual Moonlight stream. [Review summary →](docs/PROJECT-STATUS.md)
+WoWU is a **private development preview**.
 
 ## Feedback from testing
 
