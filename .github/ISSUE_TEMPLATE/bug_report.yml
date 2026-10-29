@@ -1,0 +1,41 @@
+name: Report a problem
+description: Help reproduce an issue in the addon, Assistant or companion connection.
+title: "[Bug] "
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Which part is affected?
+      options:
+        - WoWU addon / interface
+        - Controller controls
+        - Compass / navigation
+        - Windows Assistant / display setup
+        - Moonlight / streaming / pairing
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: WoW client and build
+      description: "Retail, Forever, Classic Era, Mists Classic or another branch. /wowuclient can identify the running interface."
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Addon, Compass and Assistant versions
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: What happened?
+      description: Include steps, expected behavior and what actually happened.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Error text or screenshots
+      description: Include the first exact Lua error if available. Omit private chat, account details and pairing PINs.
