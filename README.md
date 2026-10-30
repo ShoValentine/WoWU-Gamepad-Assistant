@@ -80,7 +80,7 @@ These are unedited development captures. Feature availability varies by client; 
   <a href="https://www.curseforge.com/wow/addons/wowu"><img src="https://img.shields.io/badge/CurseForge-F16436?style=for-the-badge&amp;logo=curseforge&amp;logoColor=white" alt="Download on CurseForge — coming soon, not yet published"></a>
 </p>
 
-**CurseForge listing coming soon.** WoWU has not been published there yet. This download button is a placeholder and will link directly to the project listing once it is available. Development builds are currently supplied by the maintainer.
+Download the addon from Curseforge, or use the Curseforge app
 
 ## The everyday flow
 
