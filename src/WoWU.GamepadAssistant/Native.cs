@@ -23,6 +23,8 @@ internal static class Native
     [DllImport("user32.dll")] internal static extern bool ShowWindow(nint hwnd,int cmd);
     [DllImport("user32.dll")] internal static extern bool IsWindow(nint hwnd);
     [DllImport("user32.dll")] internal static extern bool IsWindowVisible(nint hwnd);
+    [DllImport("user32.dll")] internal static extern bool IsIconic(nint hwnd);
+    [DllImport("user32.dll")] internal static extern bool IsZoomed(nint hwnd);
     [DllImport("user32.dll")] internal static extern uint GetWindowThreadProcessId(nint hwnd,out uint pid);
     internal static void Check(bool success,string action) {if(!success)throw new Win32Exception(Marshal.GetLastWin32Error(),action);}
     internal static void Style(nint hwnd,int index,long value)

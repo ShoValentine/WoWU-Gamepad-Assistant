@@ -1,0 +1,90 @@
+{
+  "repository": "https://github.com/Gethe/wow-ui-textures",
+  "revision": "d23deaf8f44a7d280dc974a5c9d5321c013db59b",
+  "assets": [
+    {
+      "file": "Assets/WoW/frame.png",
+      "original": "DialogFrame/UI-DialogBox-Gold-Border.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/DialogFrame/UI-DialogBox-Gold-Border.PNG",
+      "sha256": "b207f24533ca6e5ff8d84c51bdee1873159d96ec4d9605a37e45f810cc4dee24"
+    },
+    {
+      "file": "Assets/WoW/background.png",
+      "original": "DialogFrame/UI-DialogBox-Gold-Background.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/DialogFrame/UI-DialogBox-Gold-Background.PNG",
+      "sha256": "d00320d2bba06deea063a93fb044a92c0abaa3a794a84098996a21e0ad986478"
+    },
+    {
+      "file": "Assets/WoW/inset.png",
+      "original": "DialogFrame/UI-DialogBox-Background-Dark.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/DialogFrame/UI-DialogBox-Background-Dark.PNG",
+      "sha256": "776e71a5e1eb9f705842bf75fe318efecc35f1aff354005c3b8c80216aa06bd5"
+    },
+    {
+      "file": "Assets/WoW/divider.png",
+      "original": "DialogFrame/UI-DialogBox-Divider.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/DialogFrame/UI-DialogBox-Divider.PNG",
+      "sha256": "7cde1a28041fb6e72eb130253702ba0c625e6d0cebaa67af0b8c3743bf221e02"
+    },
+    {
+      "file": "Assets/WoW/button-up.png",
+      "original": "Buttons/UI-DialogBox-Button-Gold-Up.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/Buttons/UI-DialogBox-Button-Gold-Up.PNG",
+      "sha256": "50f41cbeb69b7db51fcb661a59737d31593547c3d80fdaafa91bdc3aa429a5ba"
+    },
+    {
+      "file": "Assets/WoW/button-down.png",
+      "original": "Buttons/UI-DialogBox-Button-Gold-Down.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/Buttons/UI-DialogBox-Button-Gold-Down.PNG",
+      "sha256": "a6cdb3bfefca7efa421c5ed879fda807b8ee16a2b6022aa40f89926e48506181"
+    },
+    {
+      "file": "Assets/WoW/button-highlight.png",
+      "original": "Buttons/UI-DialogBox-Button-Highlight.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/Buttons/UI-DialogBox-Button-Highlight.PNG",
+      "sha256": "73e63ff7cedecbb01251441a05c606ca505527d8d506be4f33d113fd1146dc05"
+    },
+    {
+      "file": "Assets/WoW/inset-border.png",
+      "original": "Tooltips/UI-Tooltip-Border.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/Tooltips/UI-Tooltip-Border.PNG",
+      "sha256": "7085e721db3dc8ecba96449c4b1a4f9afb3a732671504e7084694f36a9a29ce6"
+    },
+    {
+      "file": "Assets/WoW/statusbar.png",
+      "original": "TARGETINGFRAME/UI-StatusBar.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/TARGETINGFRAME/UI-StatusBar.PNG",
+      "sha256": "890dbfbdbea16a523e1548b0debd94105cf8b4d00003a5b82aa592ad97bcf561"
+    },
+    {
+      "file": "Assets/WoW/UI-Panel-HideButton-Down.png",
+      "original": "Buttons/UI-Panel-HideButton-Down.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/Buttons/UI-Panel-HideButton-Down.PNG",
+      "sha256": "edd1361ddfe597cad5c55266ae8fb1df5b179c1f08dde387fc05b32c584874c8"
+    },
+    {
+      "file": "Assets/WoW/UI-Panel-HideButton-Up.png",
+      "original": "Buttons/UI-Panel-HideButton-Up.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/Buttons/UI-Panel-HideButton-Up.PNG",
+      "sha256": "e2b977fcadf98691538db8babdc2c36133590abd75fb824404dff7c4aba89f51"
+    },
+    {
+      "file": "Assets/WoW/UI-Panel-MinimizeButton-Down.png",
+      "original": "Buttons/UI-Panel-MinimizeButton-Down.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/Buttons/UI-Panel-MinimizeButton-Down.PNG",
+      "sha256": "fa4702d25bb025c9f47f3e72c5235a7491e98048e6bd493ac07a3be0b8419ae6"
+    },
+    {
+      "file": "Assets/WoW/UI-Panel-MinimizeButton-Highlight.png",
+      "original": "Buttons/UI-Panel-MinimizeButton-Highlight.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/Buttons/UI-Panel-MinimizeButton-Highlight.PNG",
+      "sha256": "5ab05f50461765a258e33a988215ae06a7c3d8a39dd1a61a86de97b2a428561b"
+    },
+    {
+      "file": "Assets/WoW/UI-Panel-MinimizeButton-Up.png",
+      "original": "Buttons/UI-Panel-MinimizeButton-Up.PNG",
+      "source": "https://github.com/Gethe/wow-ui-textures/blob/d23deaf8f44a7d280dc974a5c9d5321c013db59b/Buttons/UI-Panel-MinimizeButton-Up.PNG",
+      "sha256": "a8128c505fde277e167d8f8482e51f119ec23740867e147b76c32eb3feb8c509"
+    }
+  ]
+}

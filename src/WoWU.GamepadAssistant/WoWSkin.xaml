@@ -1,0 +1,76 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <SolidColorBrush x:Key="Gold" Color="#FFD36B"/>
+ <ImageBrush x:Key="WoWBackground" ImageSource="Assets/WoW/background.png" TileMode="Tile" Viewport="0,0,64,64" ViewportUnits="Absolute"/>
+ <ImageBrush x:Key="WoWInset" ImageSource="Assets/WoW/inset.png" TileMode="Tile" Viewport="0,0,64,64" ViewportUnits="Absolute"/>
+ <BitmapImage x:Key="FrameAtlas" UriSource="Assets/WoW/frame.png"/>
+ <BitmapImage x:Key="InsetAtlas" UriSource="Assets/WoW/inset-border.png"/>
+ <BitmapImage x:Key="ButtonUpAtlas" UriSource="Assets/WoW/button-up.png"/>
+ <BitmapImage x:Key="ButtonDownAtlas" UriSource="Assets/WoW/button-down.png"/>
+ <Style TargetType="TextBlock"><Setter Property="TextWrapping" Value="Wrap"/></Style>
+ <CroppedBitmap x:Key="FrameLeft" Source="{StaticResource FrameAtlas}" SourceRect="0,0,32,32"/>
+ <CroppedBitmap x:Key="FrameRight" Source="{StaticResource FrameAtlas}" SourceRect="32,0,32,32"/>
+ <CroppedBitmap x:Key="FrameTopRaw" Source="{StaticResource FrameAtlas}" SourceRect="64,0,32,32"/>
+ <CroppedBitmap x:Key="FrameBottomRaw" Source="{StaticResource FrameAtlas}" SourceRect="96,0,32,32"/>
+ <CroppedBitmap x:Key="FrameTL" Source="{StaticResource FrameAtlas}" SourceRect="128,0,32,32"/>
+ <CroppedBitmap x:Key="FrameTR" Source="{StaticResource FrameAtlas}" SourceRect="160,0,32,32"/>
+ <CroppedBitmap x:Key="FrameBL" Source="{StaticResource FrameAtlas}" SourceRect="192,0,32,32"/>
+ <CroppedBitmap x:Key="FrameBR" Source="{StaticResource FrameAtlas}" SourceRect="224,0,32,32"/>
+ <TransformedBitmap x:Key="FrameTop" Source="{StaticResource FrameTopRaw}"><TransformedBitmap.Transform><RotateTransform Angle="90"/></TransformedBitmap.Transform></TransformedBitmap>
+ <TransformedBitmap x:Key="FrameBottom" Source="{StaticResource FrameBottomRaw}"><TransformedBitmap.Transform><RotateTransform Angle="90"/></TransformedBitmap.Transform></TransformedBitmap>
+ <CroppedBitmap x:Key="InsetLeft" Source="{StaticResource InsetAtlas}" SourceRect="0,0,16,16"/>
+ <CroppedBitmap x:Key="InsetRight" Source="{StaticResource InsetAtlas}" SourceRect="16,0,16,16"/>
+ <CroppedBitmap x:Key="InsetTopRaw" Source="{StaticResource InsetAtlas}" SourceRect="32,0,16,16"/>
+ <CroppedBitmap x:Key="InsetBottomRaw" Source="{StaticResource InsetAtlas}" SourceRect="48,0,16,16"/>
+ <CroppedBitmap x:Key="InsetTL" Source="{StaticResource InsetAtlas}" SourceRect="64,0,16,16"/>
+ <CroppedBitmap x:Key="InsetTR" Source="{StaticResource InsetAtlas}" SourceRect="80,0,16,16"/>
+ <CroppedBitmap x:Key="InsetBL" Source="{StaticResource InsetAtlas}" SourceRect="96,0,16,16"/>
+ <CroppedBitmap x:Key="InsetBR" Source="{StaticResource InsetAtlas}" SourceRect="112,0,16,16"/>
+ <TransformedBitmap x:Key="InsetTop" Source="{StaticResource InsetTopRaw}"><TransformedBitmap.Transform><RotateTransform Angle="90"/></TransformedBitmap.Transform></TransformedBitmap>
+ <TransformedBitmap x:Key="InsetBottom" Source="{StaticResource InsetBottomRaw}"><TransformedBitmap.Transform><RotateTransform Angle="90"/></TransformedBitmap.Transform></TransformedBitmap>
+ <ControlTemplate x:Key="WoWFrameTemplate" TargetType="ContentControl"><Grid SnapsToDevicePixels="True">
+  <Border Margin="12" Background="{StaticResource WoWBackground}"/>
+  <Grid IsHitTestVisible="False"><Grid.RowDefinitions><RowDefinition Height="26"/><RowDefinition Height="*"/><RowDefinition Height="26"/></Grid.RowDefinitions><Grid.ColumnDefinitions><ColumnDefinition Width="26"/><ColumnDefinition Width="*"/><ColumnDefinition Width="26"/></Grid.ColumnDefinitions>
+   <Border Grid.Row="0" Grid.Column="1"><Border.Background><ImageBrush ImageSource="{StaticResource FrameTop}" TileMode="Tile" Viewport="0,0,26,26" ViewportUnits="Absolute" Stretch="Fill"/></Border.Background></Border>
+   <Border Grid.Row="2" Grid.Column="1"><Border.Background><ImageBrush ImageSource="{StaticResource FrameBottom}" TileMode="Tile" Viewport="0,0,26,26" ViewportUnits="Absolute" Stretch="Fill"/></Border.Background></Border>
+   <Border Grid.Row="1" Grid.Column="0"><Border.Background><ImageBrush ImageSource="{StaticResource FrameLeft}" TileMode="Tile" Viewport="0,0,26,26" ViewportUnits="Absolute" Stretch="Fill"/></Border.Background></Border>
+   <Border Grid.Row="1" Grid.Column="2"><Border.Background><ImageBrush ImageSource="{StaticResource FrameRight}" TileMode="Tile" Viewport="0,0,26,26" ViewportUnits="Absolute" Stretch="Fill"/></Border.Background></Border>
+   <Image Grid.Row="0" Grid.Column="0" Source="{StaticResource FrameTL}" Stretch="Fill"/>
+   <Image Grid.Row="0" Grid.Column="2" Source="{StaticResource FrameTR}" Stretch="Fill"/>
+   <Image Grid.Row="2" Grid.Column="0" Source="{StaticResource FrameBL}" Stretch="Fill"/>
+   <Image Grid.Row="2" Grid.Column="2" Source="{StaticResource FrameBR}" Stretch="Fill"/>
+  </Grid><ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/></Grid></ControlTemplate>
+ <ControlTemplate x:Key="WoWInsetTemplate" TargetType="ContentControl"><Grid SnapsToDevicePixels="True">
+  <Border Margin="4" Background="{StaticResource WoWInset}"/>
+  <Grid IsHitTestVisible="False"><Grid.RowDefinitions><RowDefinition Height="10"/><RowDefinition Height="*"/><RowDefinition Height="10"/></Grid.RowDefinitions><Grid.ColumnDefinitions><ColumnDefinition Width="10"/><ColumnDefinition Width="*"/><ColumnDefinition Width="10"/></Grid.ColumnDefinitions>
+   <Border Grid.Row="0" Grid.Column="1"><Border.Background><ImageBrush ImageSource="{StaticResource InsetTop}" TileMode="Tile" Viewport="0,0,10,10" ViewportUnits="Absolute" Stretch="Fill"/></Border.Background></Border>
+   <Border Grid.Row="2" Grid.Column="1"><Border.Background><ImageBrush ImageSource="{StaticResource InsetBottom}" TileMode="Tile" Viewport="0,0,10,10" ViewportUnits="Absolute" Stretch="Fill"/></Border.Background></Border>
+   <Border Grid.Row="1" Grid.Column="0"><Border.Background><ImageBrush ImageSource="{StaticResource InsetLeft}" TileMode="Tile" Viewport="0,0,10,10" ViewportUnits="Absolute" Stretch="Fill"/></Border.Background></Border>
+   <Border Grid.Row="1" Grid.Column="2"><Border.Background><ImageBrush ImageSource="{StaticResource InsetRight}" TileMode="Tile" Viewport="0,0,10,10" ViewportUnits="Absolute" Stretch="Fill"/></Border.Background></Border>
+   <Image Grid.Row="0" Grid.Column="0" Source="{StaticResource InsetTL}" Stretch="Fill"/>
+   <Image Grid.Row="0" Grid.Column="2" Source="{StaticResource InsetTR}" Stretch="Fill"/>
+   <Image Grid.Row="2" Grid.Column="0" Source="{StaticResource InsetBL}" Stretch="Fill"/>
+   <Image Grid.Row="2" Grid.Column="2" Source="{StaticResource InsetBR}" Stretch="Fill"/>
+  </Grid><ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/></Grid></ControlTemplate>
+ <CroppedBitmap x:Key="ButtonUpL" Source="{StaticResource ButtonUpAtlas}" SourceRect="0,0,12,32"/>
+ <CroppedBitmap x:Key="ButtonUpC" Source="{StaticResource ButtonUpAtlas}" SourceRect="12,0,104,32"/>
+ <CroppedBitmap x:Key="ButtonUpR" Source="{StaticResource ButtonUpAtlas}" SourceRect="116,0,12,32"/>
+ <CroppedBitmap x:Key="ButtonDownL" Source="{StaticResource ButtonDownAtlas}" SourceRect="0,0,12,32"/>
+ <CroppedBitmap x:Key="ButtonDownC" Source="{StaticResource ButtonDownAtlas}" SourceRect="12,0,104,32"/>
+ <CroppedBitmap x:Key="ButtonDownR" Source="{StaticResource ButtonDownAtlas}" SourceRect="116,0,12,32"/>
+ <Style TargetType="Button">
+  <Setter Property="Foreground" Value="#FFD36B"/><Setter Property="FontFamily" Value="Georgia"/><Setter Property="FontSize" Value="14"/><Setter Property="Padding" Value="20,7"/><Setter Property="MinHeight" Value="34"/><Setter Property="Cursor" Value="Hand"/>
+  <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Grid>
+   <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="12"/><ColumnDefinition Width="*"/><ColumnDefinition Width="12"/></Grid.ColumnDefinitions><Image x:Name="Left" Source="{StaticResource ButtonUpL}" Stretch="Fill"/><Image x:Name="Center" Grid.Column="1" Source="{StaticResource ButtonUpC}" Stretch="Fill"/><Image x:Name="Right" Grid.Column="2" Source="{StaticResource ButtonUpR}" Stretch="Fill"/></Grid>
+   <Image x:Name="Glow" Source="Assets/WoW/button-highlight.png" Stretch="Fill" Opacity="0" IsHitTestVisible="False"/>
+   <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+  </Grid><ControlTemplate.Triggers>
+   <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Glow" Property="Opacity" Value=".65"/></Trigger>
+   <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Glow" Property="Opacity" Value=".65"/></Trigger>
+   <Trigger Property="IsPressed" Value="True"><Setter TargetName="Left" Property="Source" Value="{StaticResource ButtonDownL}"/><Setter TargetName="Center" Property="Source" Value="{StaticResource ButtonDownC}"/><Setter TargetName="Right" Property="Source" Value="{StaticResource ButtonDownR}"/></Trigger>
+   <Trigger Property="IsEnabled" Value="False"><Setter Property="Opacity" Value=".4"/><Setter Property="Cursor" Value="Arrow"/></Trigger>
+  </ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter>
+ </Style>
+ <Style x:Key="WoWCloseButton" TargetType="Button"><Setter Property="Width" Value="36"/><Setter Property="Height" Value="36"/><Setter Property="MinHeight" Value="0"/><Setter Property="Cursor" Value="Hand"/><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Grid Background="Transparent"><Image x:Name="Face" Source="Assets/WoW/UI-Panel-MinimizeButton-Up.png" Stretch="Fill"/><Image x:Name="Glow" Source="Assets/WoW/UI-Panel-MinimizeButton-Highlight.png" Opacity="0" Stretch="Fill"/></Grid><ControlTemplate.Triggers><Trigger Property="IsPressed" Value="True"><Setter TargetName="Face" Property="Source" Value="Assets/WoW/UI-Panel-MinimizeButton-Down.png"/></Trigger><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Glow" Property="Opacity" Value=".8"/></Trigger><Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Glow" Property="Opacity" Value=".8"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style>
+ <Style x:Key="WoWMinimizeButton" TargetType="Button"><Setter Property="Width" Value="36"/><Setter Property="Height" Value="36"/><Setter Property="MinHeight" Value="0"/><Setter Property="Cursor" Value="Hand"/><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Grid Background="Transparent"><Image x:Name="Face" Source="Assets/WoW/UI-Panel-HideButton-Up.png" Stretch="Fill"/><Image x:Name="Glow" Source="Assets/WoW/UI-Panel-MinimizeButton-Highlight.png" Opacity="0" Stretch="Fill"/></Grid><ControlTemplate.Triggers><Trigger Property="IsPressed" Value="True"><Setter TargetName="Face" Property="Source" Value="Assets/WoW/UI-Panel-HideButton-Down.png"/></Trigger><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Glow" Property="Opacity" Value=".8"/></Trigger><Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Glow" Property="Opacity" Value=".8"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style>
+ <Style TargetType="TextBox"><Setter Property="Background" Value="{StaticResource WoWInset}"/><Setter Property="Foreground" Value="#FFE7AD"/><Setter Property="CaretBrush" Value="#FFD36B"/><Setter Property="Padding" Value="8"/><Setter Property="SelectionBrush" Value="#76511B"/><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="TextBox"><ContentControl Template="{StaticResource WoWInsetTemplate}" Padding="7"><ScrollViewer x:Name="PART_ContentHost" Margin="{TemplateBinding Padding}"/></ContentControl></ControlTemplate></Setter.Value></Setter></Style>
+</ResourceDictionary>

@@ -25,7 +25,7 @@ internal sealed class Session
     internal bool Active=>record!=null;
     internal bool RecoveryPending=>File.Exists(RecoveryPath);
     internal DateTime? RevertAt {get;private set;}
-    internal bool SameWindow()
+    internal bool SameWindow(bool allowMissingMainWindow=false)
     {
         if(record==null)return false;
         Process p;
@@ -35,7 +35,8 @@ internal sealed class Session
             var hwnd=(nint)record.Handle;
             if(!Native.IsWindow(hwnd))return false;
             Native.GetWindowThreadProcessId(hwnd,out uint pid);
-            return pid==record.Pid && p.MainWindowHandle==hwnd;
+            var mainWindow=p.MainWindowHandle;
+            return pid==record.Pid && (mainWindow==hwnd || (allowMissingMainWindow && mainWindow==0));
         }
     }
     internal void Recover()
@@ -67,10 +68,7 @@ internal sealed class Session
         try {
             if(!SameWindow())throw new InvalidOperationException("The selected game closed before activation.");
             Native.ShowWindow(game.Handle,9); // SW_RESTORE, before changing styles.
-            const long removeStyle=0x00C00000L|0x00040000L|0x20000000L|0x01000000L; // caption, sizing, minimized, maximized
-            Native.Style(game.Handle,-16,(next.Style & ~removeStyle)|0x80000000L);
-            Native.Style(game.Handle,-20,next.ExtendedStyle & ~(0x00000100L|0x00000200L|0x00020000L));
-            Native.Check(Native.SetWindowPos(game.Handle,0,target.Left,target.Top,target.Width,target.Height,0x0020|0x0004|0x0010),"Could not span the game window");
+            ApplySpan(next);
             await Task.Delay(900);
             if(!SameWindow() || Discovery.Signature(Discovery.Displays())!=topology || !MatchesTarget())
                 throw new InvalidOperationException("WoW did not retain the requested client area, or the displays changed. Use Windowed mode and retry.");
@@ -80,6 +78,24 @@ internal sealed class Session
             throw;
         }
     }
+    private static void ApplySpan(RecoveryRecord session)
+    {
+        var handle=(nint)session.Handle;
+        const long removeStyle=0x00C00000L|0x00040000L|0x20000000L|0x01000000L; // caption, sizing, minimized, maximized
+        Native.Style(handle,-16,(session.Style & ~removeStyle)|0x80000000L);
+        Native.Style(handle,-20,session.ExtendedStyle & ~(0x00000100L|0x00000200L|0x00020000L));
+        var target=session.Target;
+        Native.Check(Native.SetWindowPos(handle,0,target.Left,target.Top,target.Width,target.Height,0x0020|0x0004|0x0010),"Could not span the game window");
+    }
+    internal void ReapplySpan()
+    {
+        if(record==null || !SameWindow())return;
+        var handle=(nint)record.Handle;
+        if(Native.IsIconic(handle))return;
+        if(Native.IsZoomed(handle))Native.ShowWindow(handle,9);
+        ApplySpan(record);
+    }
+    internal bool IsMinimized => record!=null && Native.IsIconic((nint)record.Handle);
     internal bool MatchesTarget()
     {
         if(record==null)return false;
@@ -90,11 +106,12 @@ internal sealed class Session
         return rect.Width==t.Width && rect.Height==t.Height && origin.X==t.Left && origin.Y==t.Top;
     }
     internal bool TopologyMatches()=>record!=null && record.Topology==Discovery.Signature(Discovery.Displays());
+    internal void ExtendPreview() {if(Active)RevertAt=DateTime.UtcNow.AddSeconds(90);}
     internal void Keep() {if(Active)RevertAt=null;}
     internal void Restore()
     {
         if(record==null) {if(RecoveryPending)Recover();return;}
-        if(SameWindow()) {
+        if(SameWindow(allowMissingMainWindow:true)) {
             var h=(nint)record.Handle;
             Native.Style(h,-16,record.Style);Native.Style(h,-20,record.ExtendedStyle);
             var r=record.OriginalRect;

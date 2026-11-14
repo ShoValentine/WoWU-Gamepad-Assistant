@@ -8,7 +8,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <PlatformTarget>x64</PlatformTarget>
-    <Version>0.1.0</Version>
+    <Version>0.7.5</Version>
+    <ApplicationIcon>Assets/app.ico</ApplicationIcon>
     <AssemblyName>WoWU.GamepadAssistant</AssemblyName>
   </PropertyGroup>
+  <ItemGroup><Resource Include="Assets\logo.png" /><Resource Include="Assets\icon.png" /><Resource Include="Assets\app.ico" /><Resource Include="Assets\stone.png" /><Resource Include="Assets\WoW\*.png" /><Content Include="..\..\driver-source\driver.zip" Link="driver.zip" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" /></ItemGroup>
 </Project>

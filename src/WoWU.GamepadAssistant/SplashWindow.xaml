@@ -1,0 +1,16 @@
+<Window x:Class="WoWU.GamepadAssistant.SplashWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="WoWU Gamepad Assistant" Width="650" Height="350" Icon="Assets/app.ico" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="Transparent" AllowsTransparency="True" Opacity="0" ShowInTaskbar="False">
+ <Window.Resources>
+  <Style TargetType="ProgressBar"><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ProgressBar">
+   <ContentControl Template="{StaticResource WoWInsetTemplate}" Padding="6"><Grid x:Name="PART_Track" Background="#110B04" ClipToBounds="True"><Grid x:Name="PART_Indicator" HorizontalAlignment="Left" ClipToBounds="True"><Image Source="Assets/WoW/statusbar.png" Stretch="Fill"/><Border Background="#BFC58C28"/><Border x:Name="Glint" Width="24" HorizontalAlignment="Right"><Border.Background><LinearGradientBrush StartPoint="0,0" EndPoint="1,0"><GradientStop Color="#00FFECC0"/><GradientStop Color="#BBFFF1B8" Offset="1"/></LinearGradientBrush></Border.Background></Border></Grid></Grid></ContentControl>
+   <ControlTemplate.Triggers><EventTrigger RoutedEvent="FrameworkElement.Loaded"><BeginStoryboard><Storyboard RepeatBehavior="Forever" AutoReverse="True"><DoubleAnimation Storyboard.TargetName="Glint" Storyboard.TargetProperty="Opacity" From=".35" To=".9" Duration="0:0:1.3"/></Storyboard></BeginStoryboard></EventTrigger></ControlTemplate.Triggers>
+  </ControlTemplate></Setter.Value></Setter></Style>
+ </Window.Resources>
+ <ContentControl Template="{StaticResource WoWFrameTemplate}" Padding="36,28,36,28">
+  <StackPanel VerticalAlignment="Center">
+   <Image Source="Assets/logo.png" Height="178" Stretch="Uniform"/>
+   <TextBlock Text="GAMEPAD ASSISTANT" FontFamily="Georgia" Foreground="#E7CC8F" FontSize="12" HorizontalAlignment="Center" Margin="0,9,0,24"/>
+   <ProgressBar x:Name="Progress" Minimum="0" Maximum="100" Height="26"/>
+   <TextBlock x:Name="Quote" Foreground="#D3BE92" TextAlignment="Center" Margin="0,14,0,0" FontFamily="Georgia" FontSize="14"/>
+  </StackPanel>
+ </ContentControl>
+</Window>

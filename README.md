@@ -122,3 +122,7 @@ WoWU is a community project and is not affiliated with or endorsed by Blizzard E
 Moonlight and Sunshine are separate projects. Sunshine is managed as a separate process by the current Assistant. The repository's original [development brief](DEVELOPMENT-BRIEF.md) and [milestone notes](MILESTONE-1.md) are historical design references.
 
 <p align="center"><img src="docs/assets/wowu-icon.png" alt="WoWU emblem" width="64"></p>
+
+## Assistant updates
+
+The Assistant checks published GitHub releases when Gamepad Mode is idle. It verifies the GitHub checksum before opening a newer Windows x64 MSI with your approval. Future releases should attach a file named `WoWU-Gamepad-Assistant-<assistant version>-win-x64.msi`. The app version in the filename is independent of the release tag. Increment the MSI package version for each upgrade.

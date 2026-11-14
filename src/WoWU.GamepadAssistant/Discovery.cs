@@ -1,3 +1,4 @@
+using System.IO;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 namespace WoWU.GamepadAssistant;
@@ -11,29 +12,49 @@ internal static class Discovery
     internal static List<Display> Displays()
     {
         var result=new List<Display>();
+        string? ownedName=null;try{ownedName=DisplaySetup.OwnedAdapter().Name;}catch(InvalidOperationException){}
         Native.MonitorCallback callback=(nint h,nint dc,ref Native.Rect rect,nint data)=>{
             var info=new Native.MonitorInfo{Size=Marshal.SizeOf<Native.MonitorInfo>(),Device=""};
             if(!Native.GetMonitorInfo(h,ref info))return true;
             var device=new Native.Device{Size=Marshal.SizeOf<Native.Device>(),Name="",Description="",Id="",Key=""};
             bool found=Native.EnumDisplayDevices(info.Device,0,ref device,1);
-            result.Add(new Display(info.Device,found?device.Id:"",found?device.Description:"Display",info.Monitor,(info.Flags&1)!=0));return true;
+            result.Add(new Display(info.Device,found?device.Id:"",info.Device==ownedName?"WoWU Display":found?device.Description:"Display",info.Monitor,(info.Flags&1)!=0));return true;
         };
         Native.Check(Native.EnumDisplayMonitors(0,0,callback,0),"Could not enumerate displays");
         return result;
     }
-    internal static List<Game> Games()
+    internal static List<Game> Games(bool includeOtherWindows=false)
     {
         var result=new List<Game>();
         foreach(var p in Process.GetProcesses())
         {
             using(p)try {
-                if(p.ProcessName is not ("Wow" or "WowT" or "WowClassic" or "WowClassicT"))continue;
-                if(p.MainWindowHandle==0 || !Native.IsWindowVisible(p.MainWindowHandle))continue;
-                result.Add(new Game(p.Id,p.StartTime.ToUniversalTime().Ticks,p.MainWindowHandle,$"{p.MainWindowTitle} ({p.ProcessName}, PID {p.Id})"));
+                if(p.Id==Environment.ProcessId)continue;
+                var window=p.MainWindowHandle;
+                if(window==0 || !Native.IsWindowVisible(window))continue;
+                string title=p.MainWindowTitle;
+                if(string.IsNullOrWhiteSpace(title))continue;
+                bool recognised=false;
+                // Metadata and the installation structure survive renamed beta executables.
+                try {
+                    string? exe=p.MainModule?.FileName;
+                    if(exe!=null) {
+                        var version=FileVersionInfo.GetVersionInfo(exe);
+                        recognised=ContainsWarcraft(version.ProductName) || ContainsWarcraft(version.FileDescription);
+                        string? folder=Path.GetDirectoryName(exe);
+                        bool clientFolder=folder!=null && Directory.Exists(Path.Combine(folder,"Interface")) && Directory.Exists(Path.Combine(folder,"WTF"));
+                        bool clientTitle=ContainsWarcraft(title) || title.Contains("Forever",StringComparison.OrdinalIgnoreCase);
+                        bool wowName=p.ProcessName.StartsWith("Wow",StringComparison.OrdinalIgnoreCase) && !p.ProcessName.StartsWith("WoWU",StringComparison.OrdinalIgnoreCase);
+                        recognised|=clientFolder && (clientTitle || wowName);
+                    }
+                }catch(System.ComponentModel.Win32Exception){}catch(IOException){}catch(UnauthorizedAccessException){}
+                if(!recognised && !includeOtherWindows)continue;
+                result.Add(new Game(p.Id,p.StartTime.ToUniversalTime().Ticks,window,$"{title} ({p.ProcessName}, PID {p.Id})"));
             }catch(System.ComponentModel.Win32Exception){}catch(InvalidOperationException){}
         }
-        return result;
+        return result.OrderBy(g=>g.Label,StringComparer.OrdinalIgnoreCase).ToList();
     }
+    private static bool ContainsWarcraft(string? value)=>value?.Contains("World of Warcraft",StringComparison.OrdinalIgnoreCase)==true;
     internal static Native.Rect Plan(Display game,Display touch,List<Display> all)
     {
         if(game.Name==touch.Name)throw new InvalidOperationException("Choose two different displays.");
