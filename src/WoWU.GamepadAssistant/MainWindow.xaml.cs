@@ -24,6 +24,8 @@ public partial class MainWindow : Window
  public MainWindow(bool startupHandled=false)
  {
   InitializeComponent();
+  var version=typeof(MainWindow).Assembly.GetName().Version;
+  if(version!=null)VersionLabel.Text=$"v{version.ToString(3)}";
   try{if(!startupHandled){session.Recover();DisplaySetup.Restore();}RefreshLists();}
   catch(Exception ex){issue="Recovery needs attention: "+ex.Message;App.RecordError(ex);}
   timer.Tick+=Tick;pairingTimer.Tick+=PollPairings;timer.Start();pairingTimer.Start();UpdateStatus();
@@ -60,6 +62,8 @@ public partial class MainWindow : Window
   else if(bridge!=null){text="Ready. Enable Gamepad Mode in WoW.";color="#8BC68A";}
   else{text="Ready. Waiting for WoWU.";}
   Status.Text=text;StatusLight.Fill=new SolidColorBrush((Color)ColorConverter.ConvertFromString(color));
+  VersionLabel.Visibility=!session.Active && !busy && !closing && !closeRequested
+   ?Visibility.Visible:Visibility.Collapsed;
  }
  private void TryAutoConnect()
  {
